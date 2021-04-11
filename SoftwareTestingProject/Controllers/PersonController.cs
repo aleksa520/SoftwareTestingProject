@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SoftwareTestingProject.BusinessLogicLayer;
+using SoftwareTestingProject.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,36 +14,48 @@ namespace SoftwareTestingProject.Controllers
     [ApiController]
     public class PersonController : ControllerBase
     {
+        private readonly IPersonService service;
+
+        public PersonController(IPersonService service)
+        {
+            this.service = service;
+        }
+
         // GET: api/<PersonController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Object> Get()
         {
-            return new string[] { "value1", "value2" };
+            return service.SelectAll();
         }
 
         // GET api/<PersonController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Object Get(int id)
         {
-            return "value";
+            return service.SelectById(id);
         }
 
         // POST api/<PersonController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Person person)
         {
+            service.Insert(person);
         }
 
         // PUT api/<PersonController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Person person)
         {
+            person.PersonId = id;
+            service.Update(person);
         }
 
         // DELETE api/<PersonController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            Person person = service.SelectById(id);
+            service.Delete(person);
         }
     }
 }

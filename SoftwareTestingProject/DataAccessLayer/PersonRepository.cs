@@ -260,9 +260,11 @@ namespace SoftwareTestingProject.DataAccessLayer
                 broker.Connection.Open();
                 transaction = broker.Connection.BeginTransaction();
                 broker.Command =
-                    new SqlCommand("", broker.Connection, transaction);
-                broker.Command.CommandText =
-                    $"update Person set RegistrationNumber ='{entity.RegistrationNumber}', FirstName = '{entity.FirstName}', LastName = '{entity.LastName}', DateOfBirth = '{entity.DateOfBirth}', Note = @Note, Address = @Address, Height = @Height, Weight = @Weight, EyeCollor = @EyeCollor, PhoneNumber = @PhoneNumber, Email = '{entity.Email}', PlaceId = {entity.PlaceId} where PersonId = {entity.PersonId}";
+                    new SqlCommand("", broker.Connection, transaction)
+                    {
+                        CommandText =
+                    $"update Person set RegistrationNumber ='{entity.RegistrationNumber}', FirstName = '{entity.FirstName}', LastName = '{entity.LastName}', DateOfBirth = '{entity.DateOfBirth}', Note = @Note, Address = @Address, Height = @Height, Weight = @Weight, EyeCollor = @EyeCollor, PhoneNumber = @PhoneNumber, Email = '{entity.Email}', PlaceId = {entity.PlaceId} where PersonId = {entity.PersonId}"
+                    };
                 if (String.IsNullOrEmpty(entity.Note))
                 {
                     broker.Command.Parameters.AddWithValue("@Note", DBNull.Value);
