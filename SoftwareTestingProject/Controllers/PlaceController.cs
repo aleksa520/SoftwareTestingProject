@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SoftwareTestingProject.BusinessLogicLayer;
+using SoftwareTestingProject.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,36 +14,44 @@ namespace SoftwareTestingProject.Controllers
     [ApiController]
     public class PlaceController : ControllerBase
     {
+
+        private readonly IPlaceService service;
+
         // GET: api/<PlaceController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Place> Get()
         {
-            return new string[] { "value1", "value2" };
+            return service.SelectAll();
         }
 
         // GET api/<PlaceController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Place Get(int id)
         {
-            return "value";
+            return service.SelectById(id);
         }
 
         // POST api/<PlaceController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Place place)
         {
+            service.Insert(place);
         }
 
         // PUT api/<PlaceController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Place place)
         {
+            place.PlaceId = id;
+            service.Update(place);
         }
 
         // DELETE api/<PlaceController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            Place place = service.SelectById(id);
+            service.Delete(place);
         }
     }
 }

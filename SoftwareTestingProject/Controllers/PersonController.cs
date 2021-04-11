@@ -15,7 +15,7 @@ namespace SoftwareTestingProject.Controllers
     public class PersonController : ControllerBase
     {
         private readonly IPersonService service;
-
+        
         public PersonController(IPersonService service)
         {
             this.service = service;
@@ -23,14 +23,14 @@ namespace SoftwareTestingProject.Controllers
 
         // GET: api/<PersonController>
         [HttpGet]
-        public IEnumerable<Object> Get()
+        public IEnumerable<Person> Get()
         {
             return service.SelectAll();
         }
 
         // GET api/<PersonController>/5
         [HttpGet("{id}")]
-        public Object Get(int id)
+        public Person Get(int id)
         {
             return service.SelectById(id);
         }
