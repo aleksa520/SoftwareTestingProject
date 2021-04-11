@@ -29,5 +29,21 @@ namespace SoftwareTestingProject.DataAccessLayer
             return Broker;
         }
 
+        public int GetId(string column, string table)
+        {
+            try
+            {
+                Connection.Open();
+                Command = new SqlCommand("", Connection, Transaction);
+                Command.CommandText = $"Select max({column}) from {table}";
+                int id = Convert.ToInt32(Command.ExecuteScalar());
+                return id + 1;
+            }
+            catch (Exception)
+            {
+                return 1;
+            }
+            finally { if (Connection != null) Connection.Close(); }
+        }
     }
 }
