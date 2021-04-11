@@ -19,7 +19,7 @@ namespace SoftwareTestingProject.Domain
         public DateTime? DateOfBirth { get; set; }
         public string Address { get; set; }
         public string Note { get; set; }
-        public int PlaceId { get; set; }
+        public int? PlaceId { get; set; }
         public Place Place { get; set; }
     }
 

@@ -20,7 +20,7 @@ namespace SoftwareTestingProject.DataAccessLayer
 
         void Connect()
         {
-            //Connection = new SqlConnection(
+            Connection = new SqlConnection(@"Data Source=DESKTOP-REGCU4G\SQLEXPRESS;Initial Catalog=SoftwareTestingDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
         public static DatabaseBroker Session()

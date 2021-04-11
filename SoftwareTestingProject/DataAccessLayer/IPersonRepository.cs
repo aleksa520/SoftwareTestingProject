@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SoftwareTestingProject.DataAccessLayer
 {
-    interface IPersonRepository : IBaseRepository<Person>
+    public interface IPersonRepository : IBaseRepository<Person>
     {
     }
 }

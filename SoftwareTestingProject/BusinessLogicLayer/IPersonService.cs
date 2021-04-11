@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SoftwareTestingProject.DataAccessLayer
+namespace SoftwareTestingProject.BusinessLogicLayer
 {
-    public interface IPlaceRepository : IBaseRepository<Place>
+    public interface IPersonService : IBaseService<Person>
     {
     }
 }
