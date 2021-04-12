@@ -17,6 +17,11 @@ namespace SoftwareTestingProject.Controllers
 
         private readonly IPlaceService service;
 
+        public PlaceController(IPlaceService service)
+        {
+            this.service = service;
+        }
+
         // GET: api/<PlaceController>
         [HttpGet]
         public IEnumerable<Place> Get()

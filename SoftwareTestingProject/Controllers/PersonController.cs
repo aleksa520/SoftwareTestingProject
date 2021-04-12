@@ -25,7 +25,13 @@ namespace SoftwareTestingProject.Controllers
         [HttpGet]
         public IEnumerable<Person> Get()
         {
-            return service.SelectAll();
+            List<Person> people = new List<Person>();
+            people.Add(new Person()
+            {
+                FirstName = "ALeksa"
+            });
+            return people;
+            //return service.SelectAll();
         }
 
         // GET api/<PersonController>/5

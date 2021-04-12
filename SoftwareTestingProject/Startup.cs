@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SoftwareTestingProject.BusinessLogicLayer;
+using SoftwareTestingProject.DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,11 @@ namespace SoftwareTestingProject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddScoped<IPersonService, PersonService>();
+            services.AddScoped<IPlaceService, PlaceService>();
+            services.AddScoped<IPlaceRepository, PlaceRepository>();
+            services.AddScoped<IPersonRepository, PersonRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
