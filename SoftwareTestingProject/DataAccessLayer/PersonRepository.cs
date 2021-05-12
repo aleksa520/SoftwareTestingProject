@@ -318,7 +318,7 @@ namespace SoftwareTestingProject.DataAccessLayer
 
                 Save();
 
-                return "Successfully updated!";
+                return "Successful!";
             }
             catch (Exception ex)
             {

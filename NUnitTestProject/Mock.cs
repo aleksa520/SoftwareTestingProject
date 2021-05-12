@@ -100,7 +100,7 @@ namespace NUnitTestProject
 
             mockRepository.Setup(repo => repo.SelectAll()).Returns(people);
 
-            mockRepository.Setup(repo => repo.SelectById(It.IsAny<int>())).Returns((int i) => people.SingleOrDefault(x => x.PersonId == i));
+            mockRepository.Setup(repo => repo.SelectById(It.IsAny<int>())).Returns((int i) => people.SingleOrDefault(x => x.PlaceId == i));
            
             mockRepository.Setup(i => i.Insert(It.IsAny<Person>())).Callback((Person person) =>
             {

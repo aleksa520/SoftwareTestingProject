@@ -193,7 +193,7 @@ namespace NUnitTestProject
 
         }
 
-        [TestCase("PersonId", 0)]
+        [TestCase("PersonId", null)]
         [TestCase("FirstName", "joe")]
         [TestCase("LastName", "")]
         [TestCase("RegistrationNumber", "-999")]
@@ -208,8 +208,8 @@ namespace NUnitTestProject
             {
                 case "PersonId":
                     var person = service.SelectById(1);
-                    person.PersonId = Convert.ToInt32(value);
-                    Assert.Throws<Exception>(() => service.Update(person), "Person doesn't exist!");
+                    person.PersonId = null;
+                    Assert.Throws<Exception>(() => service.Update(person), "Invalid PersonId!");
                     break;
                 case "FirstName":
                     person = service.SelectById(1);
@@ -226,7 +226,7 @@ namespace NUnitTestProject
                     person.RegistrationNumber = value.ToString();
                     Assert.Throws<Exception>(() => service.Update(person), "Invalid Registration number!");
                     break;
-                case "Visina":
+                case "Height":
                     person = service.SelectById(1);
                     person.Height = Convert.ToInt32(value);
                     Assert.Throws<Exception>(() => service.Update(person), "Minimum height is 35!");
