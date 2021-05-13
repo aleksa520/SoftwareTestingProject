@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftwareTestingProject", "SoftwareTestingProject\SoftwareTestingProject.csproj", "{C41F5FFE-BEDC-4897-A0D5-5FE14A7EC3B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject", "NUnitTestProject\NUnitTestProject.csproj", "{DD7EF694-49BD-4978-A524-9098795EE7AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTestProject", "NUnitTestProject\NUnitTestProject.csproj", "{DD7EF694-49BD-4978-A524-9098795EE7AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationTestProject", "AutomationTestProject\AutomationTestProject.csproj", "{31B15CC8-E197-4048-BF38-7987B4801364}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DD7EF694-49BD-4978-A524-9098795EE7AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD7EF694-49BD-4978-A524-9098795EE7AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD7EF694-49BD-4978-A524-9098795EE7AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31B15CC8-E197-4048-BF38-7987B4801364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B15CC8-E197-4048-BF38-7987B4801364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B15CC8-E197-4048-BF38-7987B4801364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B15CC8-E197-4048-BF38-7987B4801364}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

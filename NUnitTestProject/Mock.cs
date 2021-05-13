@@ -19,7 +19,7 @@ namespace NUnitTestProject
                 {
                     PlaceId = 1,
                     Name = "Kragujevac",
-                    Zipcode = 3400,
+                    Zipcode = 34000,
                     Population = 147000
                 },
                 new Place
