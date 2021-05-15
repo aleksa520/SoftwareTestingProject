@@ -30,6 +30,10 @@ namespace SoftwareTestingProject
             services.AddCors();
             services.AddControllers();
 
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+
             services.AddScoped<IPersonService, PersonService>();
             services.AddScoped<IPlaceService, PlaceService>();
             services.AddScoped<IPlaceRepository, PlaceRepository>();

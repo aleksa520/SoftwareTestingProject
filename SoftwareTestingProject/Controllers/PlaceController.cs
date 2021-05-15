@@ -14,7 +14,6 @@ namespace SoftwareTestingProject.Controllers
     [ApiController]
     public class PlaceController : ControllerBase
     {
-
         private readonly IPlaceService service;
 
         public PlaceController(IPlaceService service)
